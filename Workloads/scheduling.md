@@ -631,7 +631,24 @@ EOF
 
 ```
 
+
 ---
 
-## Resumo em Uma Frase
+## 🔗 Recursos Úteis
 
+### Documentação Oficial
+
+- 📖 [Kubernetes Scheduling Overview](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)
+- 📖 [Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)
+- 📖 [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+
+### Arquitetura do Scheduler
+
+- 🏗️ [Scheduling Code Hierarchy Overview](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-scheduling/scheduling_code_hierarchy_overview.md) - Estrutura interna do scheduler
+- 📝 [How Does the Kubernetes Scheduler Work?](https://jvns.ca/blog/2017/07/27/how-does-the-kubernetes-scheduler-work/) - Blog post explicativo
+- 💬 [How Does Kubernetes Scheduler Work? (StackOverflow)](https://stackoverflow.com/questions/28857993/how-does-kubernetes-scheduler-work) - Discussão técnica
+
+### Para Aprofundamento (não obrigatório para prova)
+
+- 📖 [Pod Scheduling Readiness](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-scheduling-readiness/)
+- 📖 [Topology Spread Constraints](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/)

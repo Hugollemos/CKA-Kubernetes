@@ -459,3 +459,30 @@ error validating data: data[spec.containers[0].image]: required value
 
 ---
 
+
+
+## 🔗 Recursos Úteis
+
+### Documentação Oficial
+
+- 📖 [Kubernetes API Overview](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) - Visão geral da API do Kubernetes
+- 📖 [Accessing the API](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/)
+- 📖 [Authenticating](https://kubernetes.io/docs/reference/access-authn-authz/authentication/)
+- 📖 [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
+### Blog Posts e Artigos
+
+- 📝 [SIG Architecture: API Spotlight](https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/) - Destaque sobre a API do Kubernetes
+
+### Para Aprofundamento (não obrigatório para prova)
+
+Recursos avançados sobre convenções e desenvolvimento da API:
+
+- 🏗️ [API Conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md) - Convenções de design da API
+- 🏗️ [API Changes](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md) - Como mudanças na API são feitas
+
+**Nota**: Esses recursos sobre convenções e mudanças da API são úteis se você quiser entender melhor a arquitetura interna, mas **não são necessários para o exame CKA**.
+
+---
+
+⬅️ **Anterior**: [backup-restore.md](./backup-restore.md) | ➡️ **Próximo**: [admission-controllers.md](./admission-controllers.md)

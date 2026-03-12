@@ -32,9 +32,13 @@ CKA-Kubernetes/
 │
 ├── Componentes-Control-Plane/        # Componentes do Control Plane
 │   ├── etcd.md                       # Banco de dados do cluster
+│   ├── backup-restore.md             # Backup e restore (ETCD, Velero)
 │   ├── kube-apiserver.md             # API Server
+│   ├── admission-controllers.md      # Admission Controllers
 │   ├── kube-controller-manager.md    # Controller Manager
-│   └── kube-scheduler.md             # Scheduler
+│   ├── kube-scheduler.md             # Scheduler
+│   ├── monitoring.md                 # Monitoring e observabilidade
+│   └── cluster-upgrade.md            # Atualização de versão do cluster
 │
 ├── Componentes-Worker-Nodes/         # Componentes dos Worker Nodes
 │   ├── kubelet.md                    # Agente dos nós
@@ -42,7 +46,16 @@ CKA-Kubernetes/
 │
 ├── Workloads/                         # Cargas de trabalho
 │   ├── pods.md                       # Pods e containers
+│   ├── multi-container-pods.md       # Multi-container e design patterns
+│   ├── resource-limits.md            # CPU/Memory requests e limits
+│   ├── autoscaling.md                # HPA, VPA e Cluster Autoscaler
+│   ├── configmaps-secrets.md         # ConfigMaps, Secrets e Encryption
 │   ├── replicaset-deployments.md     # ReplicaSets e Deployments
+│   ├── rolling-updates-rollbacks.md  # Rolling updates e rollbacks
+│   ├── daemonsets.md                 # DaemonSets (1 pod por nó)
+│   ├── static-pods.md                # Static Pods (gerenciados pelo kubelet)
+│   ├── priority-class.md             # PriorityClass (priorização de pods)
+│   ├── scheduler-profiles.md         # Scheduler Profiles (múltiplos perfis)
 │   └── scheduling.md                 # Scheduling, affinity, taints
 │
 └── Networking/                        # Networking
@@ -89,9 +102,11 @@ kubectl explain pods --recursive
 
 2. **Componentes do Control Plane**: Estude [Componentes-Control-Plane](./Componentes-Control-Plane/)
    - ETCD: banco de dados chave-valor
+   - Backup e Restore: métodos completos (ETCD snapshot, Velero, declarativo)
    - Kube-API-Server: ponto central de comunicação
    - Kube-Controller-Manager: reconciliation loops
    - Kube-Scheduler: agendamento de pods
+   - Cluster Upgrade: atualização de versão do Kubernetes
 
 3. **Componentes dos Worker Nodes**: Entenda [Componentes-Worker-Nodes](./Componentes-Worker-Nodes/)
    - Kubelet: agente que roda em cada nó
@@ -124,6 +139,8 @@ kubectl explain pods --recursive
 
 - [ ] Fundamentos de Kubernetes e Docker
 - [ ] Componentes do Control Plane
+- [ ] Backup e Restore do ETCD
+- [ ] Cluster Upgrade (atualização de versão)
 - [ ] Componentes dos Worker Nodes
 - [ ] Pods e Containers
 - [ ] Deployments e ReplicaSets
