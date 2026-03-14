@@ -9,6 +9,27 @@ Este repositório contém material de estudo organizado para a certificação **
 - 📝 Questões: 17
 - 🔗 Documentação: https://kubernetes.io/docs/home/
 
+## ⚠️ IMPORTANTE: Escopo do Exame
+
+**Nem tudo sobre Kubernetes está no CKA!** Veja **[ESCOPO-CKA.md](./ESCOPO-CKA.md)** para saber exatamente o que estudar.
+
+**Tópicos COBERTOS (muita gente acha que não, mas SÃO!):**
+- ✅ **HPA/VPA** (workload autoscaling)
+- ✅ **Helm e Kustomize** (para instalar componentes do cluster)
+- ✅ **CRDs e Operators** (instalar e configurar)
+- ✅ **Gateway API** (gerenciar Ingress traffic)
+- ✅ **HA control plane** (multi-master)
+
+**Tópicos NÃO cobertos:**
+- ❌ StatefulSets, DaemonSets, Jobs, CronJobs
+- ❌ Cluster Autoscaler (apenas HPA/VPA)
+- ❌ Service Mesh (Istio, Linkerd)
+- ❌ Prometheus/Grafana (apenas `kubectl top`)
+- ❌ GitOps (ArgoCD, Flux)
+- ❌ Desenvolver Operators/CRDs (apenas instalar e configurar)
+
+👉 **Leia [ESCOPO-CKA.md](./ESCOPO-CKA.md) antes de estudar!**
+
 ## 🎯 Domínios e Competências do Exame
 
 A prova CKA é dividida nos seguintes domínios:
