@@ -27,11 +27,23 @@ Fundamentos de containerização:
 - Container Runtime Interface (CRI)
 - Evolução de Docker para ContainerD
 
+### [docker-storage.md](./docker-storage.md)
+Sistema de armazenamento do Docker:
+- Arquitetura de storage do Docker
+- Tipos de storage: Volumes, Bind Mounts, tmpfs
+- Layered Filesystem e Copy-on-Write (CoW)
+- Storage Drivers (overlay2, aufs, devicemapper)
+- Estrutura de diretórios `/var/lib/docker/`
+- Comandos de gerenciamento de volumes
+- Troubleshooting de problemas de storage
+- Relação com Persistent Volumes do Kubernetes
+
 ## 🎯 Como Estudar
 
 1. **Comece com**: [dicas-e-links.md](./dicas-e-links.md) para entender o formato da prova
 2. **Depois**: [componentes-overview.md](./componentes-overview.md) para ter uma visão geral da arquitetura
-3. **Finalize com**: [docker-containerd.md](./docker-containerd.md) para entender a base de containers
+3. **Continue com**: [docker-containerd.md](./docker-containerd.md) para entender a base de containers
+4. **Finalize com**: [docker-storage.md](./docker-storage.md) para entender storage de containers
 
 ---
 

@@ -33,6 +33,18 @@ Esta pasta contém guias completos sobre os componentes do Control Plane do Kube
 - Métodos HTTP e recursos
 - Troubleshooting de problemas de autenticação/autorização
 
+### [authentication.md](./authentication.md)
+**Autenticação de usuários e aplicações no cluster**
+- O que é Authentication vs Authorization vs Admission Control
+- Tipos de usuários (Service Accounts vs Normal Users)
+- Métodos de autenticação: X.509 Certificates, Bearer Tokens, OIDC, Webhook
+- Criar usuários com certificados X.509 e CertificateSigningRequest
+- Service Accounts: criação, tokens e uso em pods
+- Static tokens e passwords (não recomendado)
+- Configuração de OIDC para empresas
+- Troubleshooting de problemas de autenticação (401 Unauthorized)
+- Comandos essenciais: kubectl auth whoami, can-i, impersonate
+
 ### [kube-controller-manager.md](./kube-controller-manager.md)
 **Orquestrador dos controladores**
 - O que é o Controller Manager
@@ -97,18 +109,22 @@ Os componentes do Control Plane representam **25% da prova** no domínio "Cluste
 1. **[etcd.md](./etcd.md)** - Base de dados do cluster, essencial entender primeiro
 2. **[backup-restore.md](./backup-restore.md)** - Backup e restore do cluster (MUITO IMPORTANTE!)
 3. **[kube-apiserver.md](./kube-apiserver.md)** - Ponto central, todos se comunicam com ele
-4. **[admission-controllers.md](./admission-controllers.md)** - Interceptam requisições no API Server
-5. **[kube-controller-manager.md](./kube-controller-manager.md)** - Gerencia o estado do cluster
-6. **[kube-scheduler.md](./kube-scheduler.md)** - Decide onde os pods rodam
-7. **[monitoring.md](./monitoring.md)** - Monitoramento e troubleshooting do cluster
-8. **[cluster-upgrade.md](./cluster-upgrade.md)** - Atualização de versão do cluster (IMPORTANTE!)
+4. **[authentication.md](./authentication.md)** - Autenticação de usuários e aplicações (primeira camada de segurança)
+5. **[admission-controllers.md](./admission-controllers.md)** - Interceptam requisições no API Server (terceira camada)
+6. **[kube-controller-manager.md](./kube-controller-manager.md)** - Gerencia o estado do cluster
+7. **[kube-scheduler.md](./kube-scheduler.md)** - Decide onde os pods rodam
+8. **[monitoring.md](./monitoring.md)** - Monitoramento e troubleshooting do cluster
+9. **[cluster-upgrade.md](./cluster-upgrade.md)** - Atualização de versão do cluster (IMPORTANTE!)
 
 ## 💡 Dica de Prova
 
 Na prova, você pode precisar:
 - Fazer backup e restore do ETCD (MUITO COMUM!)
 - Atualizar o cluster para uma nova versão (MUITO COMUM!)
+- Criar usuários com certificados X.509 (COMUM!)
+- Criar ServiceAccounts e configurar em pods (COMUM!)
 - Configurar autenticação e RBAC via API Server
+- Testar permissões com kubectl auth can-i
 - Configurar Pod Security Admission em namespaces (Admission Controllers)
 - Criar LimitRange e ResourceQuota (Admission Controllers)
 - Entender por que um Deployment não está criando pods (Controller Manager)

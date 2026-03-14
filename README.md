@@ -28,12 +28,14 @@ CKA-Kubernetes/
 ├── Conceitos-Fundamentais/            # Fundamentos e preparação
 │   ├── dicas-e-links.md              # Dicas da prova e links úteis
 │   ├── componentes-overview.md       # Overview dos componentes K8s
-│   └── docker-containerd.md          # Docker, ContainerD, OCI, CRI
+│   ├── docker-containerd.md          # Docker, ContainerD, OCI, CRI
+│   └── docker-storage.md             # Docker Storage (volumes, layers, CoW)
 │
 ├── Componentes-Control-Plane/        # Componentes do Control Plane
 │   ├── etcd.md                       # Banco de dados do cluster
 │   ├── backup-restore.md             # Backup e restore (ETCD, Velero)
 │   ├── kube-apiserver.md             # API Server
+│   ├── authentication.md             # Authentication (autenticação de usuários)
 │   ├── admission-controllers.md      # Admission Controllers
 │   ├── kube-controller-manager.md    # Controller Manager
 │   ├── kube-scheduler.md             # Scheduler
@@ -57,6 +59,9 @@ CKA-Kubernetes/
 │   ├── priority-class.md             # PriorityClass (priorização de pods)
 │   ├── scheduler-profiles.md         # Scheduler Profiles (múltiplos perfis)
 │   └── scheduling.md                 # Scheduling, affinity, taints
+│
+├── 05-Storage/                        # Storage (Armazenamento)
+│   └── volumes-persistent-volumes.md # Volumes, PV/PVC, StorageClass, CSI
 │
 └── Networking/                        # Networking
     └── services.md                   # Services e endpoints
@@ -117,7 +122,14 @@ kubectl explain pods --recursive
    - ReplicaSets e Deployments: gerenciamento de réplicas
    - Scheduling: controle onde pods são executados
 
-5. **Networking**: Domine [Networking](./Networking/)
+5. **Storage**: Entenda [05-Storage](./05-Storage/)
+   - Volumes: emptyDir, hostPath, configMap, secret
+   - Persistent Volumes (PV) e Persistent Volume Claims (PVC)
+   - Storage Classes: provisionamento dinâmico
+   - Container Storage Interface (CSI)
+   - Access Modes, Volume Modes, Reclaim Policies
+
+6. **Networking**: Domine [Networking](./Networking/)
    - Services: ClusterIP, NodePort, LoadBalancer
    - Endpoints e service discovery
 
@@ -140,6 +152,9 @@ kubectl explain pods --recursive
 - [ ] Fundamentos de Kubernetes e Docker
 - [ ] Componentes do Control Plane
 - [ ] Backup e Restore do ETCD
+- [ ] Authentication (certificados X.509, ServiceAccounts, OIDC)
+- [ ] RBAC e Authorization
+- [ ] Admission Controllers (validating, mutating, webhooks)
 - [ ] Cluster Upgrade (atualização de versão)
 - [ ] Componentes dos Worker Nodes
 - [ ] Pods e Containers
@@ -147,7 +162,6 @@ kubectl explain pods --recursive
 - [ ] Services e Networking
 - [ ] Storage (PV/PVC)
 - [ ] ConfigMaps e Secrets
-- [ ] RBAC e Segurança
 - [ ] Troubleshooting
 - [ ] Simulados práticos
 
