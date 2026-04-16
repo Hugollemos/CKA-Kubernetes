@@ -46,28 +46,33 @@ A prova CKA é dividida nos seguintes domínios:
 
 ```
 CKA-Kubernetes/
-├── Conceitos-Fundamentais/            # Fundamentos e preparação
+├── 01-Conceitos-Fundamentais/         # Fundamentos e preparação
 │   ├── dicas-e-links.md              # Dicas da prova e links úteis
 │   ├── componentes-overview.md       # Overview dos componentes K8s
 │   ├── docker-containerd.md          # Docker, ContainerD, OCI, CRI
-│   └── docker-storage.md             # Docker Storage (volumes, layers, CoW)
+│   ├── docker-storage.md             # Docker Storage (volumes, layers, CoW)
+│   ├── jsonpath.md                   # JSONPath para kubectl
+│   ├── labels-selectors.md           # Labels e Selectors
+│   └── namespaces.md                 # Namespaces
 │
-├── Componentes-Control-Plane/        # Componentes do Control Plane
+├── 02-Cluster-Architecture/          # Cluster Architecture, Installation & Config (25%)
 │   ├── etcd.md                       # Banco de dados do cluster
 │   ├── backup-restore.md             # Backup e restore (ETCD, Velero)
 │   ├── kube-apiserver.md             # API Server
 │   ├── authentication.md             # Authentication (autenticação de usuários)
+│   ├── tls.md                        # TLS e Certificados
+│   ├── kubeconfig.md                 # Configuração de acesso ao cluster
+│   ├── rbac.md                       # RBAC (controle de acesso)
+│   ├── service-accounts.md           # Service Accounts
 │   ├── admission-controllers.md      # Admission Controllers
 │   ├── kube-controller-manager.md    # Controller Manager
 │   ├── kube-scheduler.md             # Scheduler
+│   ├── kubelet.md                    # Agente dos nós
+│   ├── kube-proxy.md                 # Proxy de rede
 │   ├── monitoring.md                 # Monitoring e observabilidade
 │   └── cluster-upgrade.md            # Atualização de versão do cluster
 │
-├── Componentes-Worker-Nodes/         # Componentes dos Worker Nodes
-│   ├── kubelet.md                    # Agente dos nós
-│   └── kube-proxy.md                 # Proxy de rede
-│
-├── Workloads/                         # Cargas de trabalho
+├── 03-Workloads-Scheduling/          # Workloads & Scheduling (15%)
 │   ├── pods.md                       # Pods e containers
 │   ├── multi-container-pods.md       # Multi-container e design patterns
 │   ├── resource-limits.md            # CPU/Memory requests e limits
@@ -75,17 +80,27 @@ CKA-Kubernetes/
 │   ├── configmaps-secrets.md         # ConfigMaps, Secrets e Encryption
 │   ├── replicaset-deployments.md     # ReplicaSets e Deployments
 │   ├── rolling-updates-rollbacks.md  # Rolling updates e rollbacks
-│   ├── daemonsets.md                 # DaemonSets (1 pod por nó)
 │   ├── static-pods.md                # Static Pods (gerenciados pelo kubelet)
-│   ├── priority-class.md             # PriorityClass (priorização de pods)
-│   ├── scheduler-profiles.md         # Scheduler Profiles (múltiplos perfis)
-│   └── scheduling.md                 # Scheduling, affinity, taints
+│   ├── scheduling.md                 # Scheduling, affinity, taints
+│   ├── image-security.md             # Segurança de imagens
+│   └── security-context.md          # SecurityContext de pods e containers
 │
-├── 05-Storage/                        # Storage (Armazenamento)
-│   └── volumes-persistent-volumes.md # Volumes, PV/PVC, StorageClass, CSI
+├── 04-Services-Networking/           # Services & Networking (20%)
+│   ├── services.md                   # ClusterIP, NodePort, LoadBalancer
+│   ├── ingress.md                    # Ingress e Gateway API
+│   ├── network-policies.md           # Network Policies
+│   ├── dns-coredns.md                # CoreDNS e DNS no cluster
+│   ├── cni-plugins.md                # CNI plugins
+│   └── network-fundamentals.md       # Fundamentos de rede
 │
-└── Networking/                        # Networking
-    └── services.md                   # Services e endpoints
+├── 05-Storage/                        # Storage (10%)
+│   ├── volumes-persistent-volumes.md # Volumes, PV/PVC, StorageClass, CSI
+│   └── storage-class.md              # StorageClasses e dynamic provisioning
+│
+└── 06-Troubleshooting/               # Troubleshooting (30%)
+    ├── application-failure.md        # Falhas em aplicações
+    ├── control-plane-failure.md      # Falhas no control plane
+    └── worker-node-failure.md        # Falhas em worker nodes
 ```
 
 ## 🚀 Dicas Essenciais para a Prova
@@ -121,38 +136,43 @@ kubectl explain pods --recursive
 
 ## 📖 Como Estudar
 
-1. **Conceitos Fundamentais**: Comece por [Conceitos-Fundamentais](./Conceitos-Fundamentais/)
+1. **Conceitos Fundamentais**: Comece por [01-Conceitos-Fundamentais](./01-Conceitos-Fundamentais/)
    - Leia as dicas da prova
    - Entenda a arquitetura geral dos componentes
    - Compreenda Docker vs ContainerD
 
-2. **Componentes do Control Plane**: Estude [Componentes-Control-Plane](./Componentes-Control-Plane/)
+2. **Cluster Architecture (25%)**: Estude [02-Cluster-Architecture](./02-Cluster-Architecture/)
    - ETCD: banco de dados chave-valor
    - Backup e Restore: métodos completos (ETCD snapshot, Velero, declarativo)
    - Kube-API-Server: ponto central de comunicação
+   - TLS, Kubeconfig, RBAC, Service Accounts
+   - Kubelet e Kube-Proxy: componentes dos worker nodes
    - Kube-Controller-Manager: reconciliation loops
    - Kube-Scheduler: agendamento de pods
    - Cluster Upgrade: atualização de versão do Kubernetes
 
-3. **Componentes dos Worker Nodes**: Entenda [Componentes-Worker-Nodes](./Componentes-Worker-Nodes/)
-   - Kubelet: agente que roda em cada nó
-   - Kube-Proxy: regras de rede e serviços
-
-4. **Workloads**: Pratique em [Workloads](./Workloads/)
+3. **Workloads & Scheduling (15%)**: Pratique em [03-Workloads-Scheduling](./03-Workloads-Scheduling/)
    - Pods: unidade básica do Kubernetes
    - ReplicaSets e Deployments: gerenciamento de réplicas
    - Scheduling: controle onde pods são executados
+   - HPA/VPA: autoscaling
 
-5. **Storage**: Entenda [05-Storage](./05-Storage/)
+4. **Services & Networking (20%)**: Domine [04-Services-Networking](./04-Services-Networking/)
+   - Services: ClusterIP, NodePort, LoadBalancer
+   - Ingress e Gateway API
+   - Network Policies e CoreDNS
+
+5. **Storage (10%)**: Entenda [05-Storage](./05-Storage/)
    - Volumes: emptyDir, hostPath, configMap, secret
    - Persistent Volumes (PV) e Persistent Volume Claims (PVC)
    - Storage Classes: provisionamento dinâmico
    - Container Storage Interface (CSI)
    - Access Modes, Volume Modes, Reclaim Policies
 
-6. **Networking**: Domine [Networking](./Networking/)
-   - Services: ClusterIP, NodePort, LoadBalancer
-   - Endpoints e service discovery
+6. **Troubleshooting (30%)**: Pratique em [06-Troubleshooting](./06-Troubleshooting/)
+   - Falhas em aplicações (CrashLoopBackOff, ImagePullBackOff)
+   - Falhas no control plane e worker nodes
+   - Troubleshooting de rede e DNS
 
 ## 🔗 Recursos Externos
 

@@ -38,6 +38,23 @@ Sistema de armazenamento do Docker:
 - Troubleshooting de problemas de storage
 - Relação com Persistent Volumes do Kubernetes
 
+### [namespaces.md](./namespaces.md)
+Isolamento lógico de recursos no cluster:
+- O que são Namespaces e namespaces padrão (default, kube-system)
+- Criar e listar namespaces
+- Criar objetos em namespaces específicos
+- Trocar o namespace padrão da sessão
+- DNS entre namespaces (FQDN)
+- ResourceQuota para limitar recursos por namespace
+
+### [labels-selectors.md](./labels-selectors.md)
+Organização e seleção de objetos:
+- O que são Labels e Selectors
+- Definir labels em Pods, ReplicaSets, Services
+- Selecionar objetos via kubectl (`-l`, `--selector`)
+- Como o Kubernetes usa labels para conectar objetos
+- Annotations: informações complementares (não usadas em seleção)
+
 ## 🎯 Como Estudar
 
 1. **Comece com**: [dicas-e-links.md](./dicas-e-links.md) para entender o formato da prova
@@ -47,4 +64,4 @@ Sistema de armazenamento do Docker:
 
 ---
 
-➡️ **Próximo passo**: [Componentes-Control-Plane](../Componentes-Control-Plane/)
+➡️ **Próximo passo**: [02-Cluster-Architecture](../02-Cluster-Architecture/)

@@ -4,6 +4,24 @@ Esta pasta contém guias sobre networking no Kubernetes, incluindo Services e co
 
 ## 📚 Conteúdo
 
+### [dns-coredns.md](./dns-coredns.md)
+**DNS interno do cluster e CoreDNS**
+- Resolução de DNS para Services (`<nome>.<namespace>.svc.cluster.local`)
+- Resolução de DNS para Pods (IP com hífens)
+- CoreDNS: pods, deployment e service no kube-system
+- Arquivo de configuração Corefile
+- Como o kubelet configura o DNS dos pods
+- Troubleshooting de DNS
+
+### [network-policies.md](./network-policies.md)
+**Controle de tráfego entre Pods**
+- O que são Network Policies e plugins compatíveis (Calico, Weave, Cilium)
+- Tipos de tráfego: Ingress e Egress
+- Selectors: podSelector, namespaceSelector, ipBlock
+- Combinando selectors (AND vs OR)
+- Política "Deny All" padrão
+- Regras aditivas entre políticas
+
 ### [services.md](./services.md)
 **Abstração de rede para expor aplicações**
 - O que são Services e por que são necessários
@@ -207,4 +225,4 @@ Pod (container rodando)
 
 ---
 
-⬅️ **Anterior**: [Workloads](../Workloads/) | ➡️ **Início**: [README Principal](../README.md)
+⬅️ **Anterior**: [03-Workloads-Scheduling](../03-Workloads-Scheduling/) | ➡️ **Próximo**: [05-Storage](../05-Storage/)

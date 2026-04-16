@@ -117,6 +117,22 @@ Esta pasta contém guias sobre os principais objetos de carga de trabalho do Kub
 - Troubleshooting de OOMKilled e recursos insuficientes
 - Boas práticas de resource management
 
+### [image-security.md](./image-security.md)
+**Segurança de imagens de container**
+- Convenção de nomes de imagens (registry/usuário/nome:tag)
+- Registries privados: criar Secret `docker-registry`
+- Usar `imagePullSecrets` em pods
+- ImagePullPolicy (Always, IfNotPresent, Never)
+- Boas práticas: tags fixas, escaneamento de vulnerabilidades
+
+### [security-context.md](./security-context.md)
+**Configurações de segurança para Pods e containers**
+- SecurityContext no nível de Pod e de container
+- `runAsUser`, `runAsGroup`, `runAsNonRoot`
+- `allowPrivilegeEscalation`, `readOnlyRootFilesystem`
+- Linux Capabilities (add/drop)
+- Exemplo seguro para produção
+
 ### [autoscaling.md](./autoscaling.md)
 **Escalabilidade automática de pods e clusters**
 - HPA (Horizontal Pod Autoscaler): escala número de pods
@@ -410,4 +426,4 @@ kubectl describe pod <pod-name>
 
 ---
 
-⬅️ **Anterior**: [Componentes-Worker-Nodes](../Componentes-Worker-Nodes/) | ➡️ **Próximo**: [Networking](../Networking/)
+⬅️ **Anterior**: [02-Cluster-Architecture](../02-Cluster-Architecture/) | ➡️ **Próximo**: [04-Services-Networking](../04-Services-Networking/)

@@ -1,6 +1,6 @@
-# Componentes do Control Plane
+# Cluster Architecture, Installation & Configuration (25%)
 
-Esta pasta contém guias completos sobre os componentes do Control Plane do Kubernetes, que são responsáveis por gerenciar o cluster.
+Esta pasta cobre o domínio de maior peso após Troubleshooting no exame CKA: arquitetura do cluster, componentes do control plane e worker nodes, autenticação, autorização e ciclo de vida do cluster.
 
 ## 📚 Conteúdo
 
@@ -94,6 +94,41 @@ Esta pasta contém guias completos sobre os componentes do Control Plane do Kube
 - Troubleshooting de problemas no upgrade
 - Checklist e boas práticas
 
+### [tls.md](./tls.md)
+**TLS e Certificados no Kubernetes**
+- Criptografia simétrica e assimétrica
+- Certificate Authority (CA) do cluster
+- Gerar certificados com OpenSSL (CA, Admin, apiserver)
+- Certificados de servidor e cliente por componente
+- Certificate API: aprovar requisições de certificados (CertificateSigningRequest)
+- Visualizar detalhes de certificados (`openssl x509 -text`)
+- Localização dos certificados no cluster (kubeadm)
+
+### [kubeconfig.md](./kubeconfig.md)
+**Configuração de acesso ao cluster**
+- Estrutura do kubeconfig (clusters, users, contexts)
+- Trocar de contexto (`kubectl config use-context`)
+- Múltiplos arquivos kubeconfig
+- Certificados por caminho ou base64 embutido
+- Definir namespace padrão no contexto
+
+### [rbac.md](./rbac.md)
+**Controle de Acesso Baseado em Funções**
+- Mecanismos de autorização: Node, ABAC, RBAC, Webhook
+- API Groups: core (`/api`) e named (`/apis`)
+- Roles e RoleBindings (escopo de namespace)
+- ClusterRoles e ClusterRoleBindings (escopo de cluster)
+- Verificar permissões com `kubectl auth can-i`
+- Recursos namespaced vs cluster-scoped
+
+### [service-accounts.md](./service-accounts.md)
+**Autenticação de aplicações na API do Kubernetes**
+- Service Accounts para bots/aplicações
+- Token automático montado nos pods
+- TokenRequest API (v1.22+): tokens com expiração
+- Criação manual de tokens (v1.24+)
+- Vincular SA com RBAC para controle de acesso
+
 ## 🎯 Importância para o Exame CKA
 
 Os componentes do Control Plane representam **25% da prova** no domínio "Cluster Architecture, Installation & Configuration".
@@ -134,4 +169,4 @@ Na prova, você pode precisar:
 
 ---
 
-⬅️ **Anterior**: [Conceitos-Fundamentais](../Conceitos-Fundamentais/) | ➡️ **Próximo**: [Componentes-Worker-Nodes](../Componentes-Worker-Nodes/)
+⬅️ **Anterior**: [01-Conceitos-Fundamentais](../01-Conceitos-Fundamentais/) | ➡️ **Próximo**: [03-Workloads-Scheduling](../03-Workloads-Scheduling/)

@@ -4,6 +4,14 @@ Esta pasta contém guias completos sobre Storage no Kubernetes, cobrindo Volumes
 
 ## 📚 Conteúdo
 
+### [storage-class.md](./storage-class.md)
+**Provisionamento dinâmico de volumes**
+- Provisionamento estático vs dinâmico
+- Criar StorageClass com provisioners (GCP, AWS, Azure)
+- PVC usando StorageClass (`storageClassName`)
+- Parâmetros: reclaimPolicy, volumeBindingMode, allowVolumeExpansion
+- Storage Class padrão (annotation `is-default-class`)
+
 ### [volumes-persistent-volumes.md](./volumes-persistent-volumes.md)
 **Guia completo sobre storage no Kubernetes**
 
@@ -162,4 +170,4 @@ kubectl delete pvc <name>
 
 ---
 
-⬅️ **Anterior**: [../Workloads/](../Workloads/) | ➡️ **Próximo**: [../06-Troubleshooting/](../06-Troubleshooting/)
+⬅️ **Anterior**: [04-Services-Networking](../04-Services-Networking/) | ➡️ **Próximo**: [06-Troubleshooting](../06-Troubleshooting/)
