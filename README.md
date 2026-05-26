@@ -2,7 +2,7 @@
 
 ## 📚 Sobre este Repositório
 
-Este repositório contém material de estudo organizado para a certificação **Certified Kubernetes Administrator (CKA)**, versão Kubernetes v1.34.
+Este repositório contém material de estudo organizado para a certificação **Certified Kubernetes Administrator (CKA)**, versão Kubernetes v1.31+.
 
 **Informações da Prova:**
 - ⏱️ Duração: 2 horas
@@ -19,9 +19,12 @@ Este repositório contém material de estudo organizado para a certificação **
 - ✅ **CRDs e Operators** (instalar e configurar)
 - ✅ **Gateway API** (gerenciar Ingress traffic)
 - ✅ **HA control plane** (multi-master)
+- ✅ **DaemonSets** (primitives — kube-proxy e CNI plugins rodam como DaemonSets)
+- ✅ **Jobs** (primitives — pode aparecer na prova)
 
 **Tópicos NÃO cobertos:**
-- ❌ StatefulSets, DaemonSets, Jobs, CronJobs
+- ❌ StatefulSets (foco do CKAD)
+- ⚠️ CronJobs (zona cinza — pode aparecer, mas não é foco)
 - ❌ Cluster Autoscaler (apenas HPA/VPA)
 - ❌ Service Mesh (Istio, Linkerd)
 - ❌ Prometheus/Grafana (apenas `kubectl top`)

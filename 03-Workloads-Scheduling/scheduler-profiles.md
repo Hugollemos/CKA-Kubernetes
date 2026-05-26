@@ -1,5 +1,7 @@
 # Scheduler Profiles
 
+> ❌ **FORA DO ESCOPO CKA** — Scheduler Profiles são detalhamento avançado e **não são cobrados na prova**. Este arquivo é apenas referência extra. Não gaste tempo de estudo aqui.
+
 ## 📋 O que são Scheduler Profiles?
 
 **Scheduler Profiles** permitem configurar **múltiplos perfis de scheduling** em um único kube-scheduler. Cada perfil pode ter diferentes plugins e configurações, permitindo comportamentos distintos de scheduling para diferentes tipos de workloads.

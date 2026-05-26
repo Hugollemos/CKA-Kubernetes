@@ -15,7 +15,7 @@ O **kube-controller-manager** executa diversos controladores que regulam o estad
 
 - **Node Controller**: Responsável por monitorar a saúde dos nós, integrar novos nós ao cluster e lidar com situações onde os nós ficam indisponíveis ou são destruídos
 - **Replication Controller**: Garante que o número desejado de réplicas de pods esteja em execução o tempo todo dentro de um ReplicationController (nota: ReplicaSets são mais comumente usados hoje)
-- Outros controladores incluem: Deployment Controller, StatefulSet Controller, Job Controller, entre outros
+- Outros controladores incluem: Deployment Controller, ReplicaSet Controller, Job Controller, DaemonSet Controller, entre outros
 
 ### kube-apiserver
 

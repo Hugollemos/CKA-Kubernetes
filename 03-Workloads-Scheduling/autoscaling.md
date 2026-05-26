@@ -434,6 +434,8 @@ kubectl describe vpa nginx-vpa
 
 ## 🔄 In-Place Pod Resizing (Redimensionamento In-Place)
 
+> ❌ **FORA DO ESCOPO CKA** — In-Place Pod Resizing não está explicitamente no currículo CKA. Conteúdo abaixo é referência extra.
+
 ### O que é In-Place Pod Resizing?
 
 **In-Place Pod Resizing** permite atualizar os **resources (requests e limits)** de containers em pods **sem reiniciá-los**.

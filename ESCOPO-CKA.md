@@ -122,6 +122,9 @@ Este documento lista **o que está DENTRO e FORA** do escopo do exame **CKA (Cer
 - ✅ Resource requests e limits
 - ✅ **Horizontal Pod Autoscaler (HPA)**
 - ✅ **Vertical Pod Autoscaler (VPA)**
+- ✅ **DaemonSets** (primitives — kube-proxy, CNI plugins rodam como DaemonSets)
+- ✅ **Jobs** (primitives — pode aparecer na prova)
+- ⚠️ CronJobs (zona cinza — pode aparecer como primitive)
 - ✅ Node selectors
 - ✅ Node affinity e anti-affinity
 - ✅ Taints e tolerations
@@ -133,14 +136,11 @@ Este documento lista **o que está DENTRO e FORA** do escopo do exame **CKA (Cer
 - ✅ Multi-container Pods (sidecar, adapter, ambassador patterns)
 
 **NÃO inclui:**
-- ❌ StatefulSets (não é cobrado no CKA)
-- ❌ DaemonSets (não é cobrado no CKA)
-- ❌ Jobs (não é cobrado no CKA)
-- ❌ CronJobs (não é cobrado no CKA)
+- ❌ StatefulSets (foco do CKAD, não cobrado no CKA)
 - ❌ Cluster Autoscaler (apenas HPA e VPA)
 - ❌ Custom Schedulers (desenvolvimento de schedulers customizados)
 - ❌ Scheduler Profiles (detalhamento avançado)
-- ❌ PriorityClasses (detalhamento avançado)
+- ⚠️ PriorityClasses (zona cinza — conceito básico pode aparecer em "Pod admission and scheduling", mas preempção avançada não é foco)
 
 ---
 
@@ -164,7 +164,7 @@ Este documento lista **o que está DENTRO e FORA** do escopo do exame **CKA (Cer
 - ✅ Static vs Dynamic Provisioning
 
 **NÃO inclui:**
-- ❌ StatefulSets com VolumeClaimTemplates (StatefulSets não é cobrado)
+- ❌ StatefulSets com VolumeClaimTemplates (StatefulSets não é cobrado no CKA)
 - ❌ Volume Snapshots (feature avançada)
 - ❌ Volume Cloning (feature avançada)
 - ❌ Custom CSI driver development (apenas uso de drivers existentes)
@@ -187,10 +187,7 @@ Este documento lista **o que está DENTRO e FORA** do escopo do exame **CKA (Cer
 
 ### Workloads NÃO Cobertos
 
-- ❌ **StatefulSets** (não é cobrado no CKA)
-- ❌ **DaemonSets** (não é cobrado no CKA)
-- ❌ **Jobs** (não é cobrado no CKA)
-- ❌ **CronJobs** (não é cobrado no CKA)
+- ❌ **StatefulSets** (foco do CKAD, não cobrado no CKA)
 
 ### Features Avançadas NÃO Cobertas
 
@@ -263,7 +260,7 @@ O exame CKA foca em **administração de clusters Kubernetes**:
 4. **Desenvolver** Operators ou CRDs (apenas instalar e configurar)
 5. **Configurar** Cluster Autoscaler (apenas HPA/VPA)
 6. **Desenvolver** CSI drivers customizados (apenas usar)
-7. **StatefulSets, DaemonSets, Jobs, CronJobs** (não são cobertos)
+7. **StatefulSets** (foco do CKAD, não cobrado no CKA)
 
 ---
 
@@ -310,9 +307,7 @@ O exame CKA foca em **administração de clusters Kubernetes**:
 
 ### ⚠️ Não gaste tempo em:
 
-- ❌ StatefulSets (NÃO está no escopo)
-- ❌ DaemonSets (NÃO está no escopo)
-- ❌ Jobs/CronJobs (NÃO está no escopo)
+- ❌ StatefulSets (foco do CKAD, NÃO está no escopo do CKA)
 - ❌ Cluster Autoscaler (apenas HPA/VPA são cobrados)
 - ❌ Service Mesh (NÃO está no escopo)
 - ❌ Prometheus/Grafana setup (apenas `kubectl top`)
@@ -342,10 +337,8 @@ Comparado com versões anteriores, o CKA **AGORA INCLUI**:
 - ✅ **Gateway API**
 - ✅ **HA control plane**
 
-E **REMOVEU** do escopo:
-- ❌ StatefulSets
-- ❌ DaemonSets
-- ❌ Jobs e CronJobs
+E **REMOVEU** do escopo explícito (mas "primitives" ainda os cobre implicitamente):
+- ❌ StatefulSets (foco do CKAD)
 
 ---
 

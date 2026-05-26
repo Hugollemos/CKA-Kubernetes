@@ -664,6 +664,8 @@ allowVolumeExpansion: true
 
 ### Exemplo de Snapshot
 
+> ❌ **FORA DO ESCOPO CKA** — Volume Snapshots não são cobrados na prova. O conteúdo abaixo é apenas referência.
+
 ```yaml
 # 1. VolumeSnapshotClass
 apiVersion: snapshot.storage.k8s.io/v1
